@@ -1,0 +1,24 @@
+# Pipecat with the extras main.py actually uses:
+#   runner     -> fastapi/uvicorn dev server (pipecat.runner.run)
+#   webrtc     -> SmallWebRTC transport (create_transport "webrtc")
+#   elevenlabs -> ElevenLabsRealtimeSTTService and ElevenLabsTTSService
+#   silero     -> SileroVADAnalyzer
+pipecat-ai[runner,webrtc,elevenlabs,silero]>=1.10.0
+
+# LangChain deep agent used by deep_agent.py
+deepagents>=0.7.0
+langchain>=1.0.0
+langchain-openai>=1.0.0
+langchain-text-splitters>=0.0.1
+langgraph>=1.0.0
+
+# Bilingual retrieval stack used by rags.py:
+#   camel-tools        -> Arabic normalization (dediac, alef, teh marbuta)
+#   faiss-cpu          -> vector store
+#   langchain-community-> FAISS integration
+camel-tools>=1.6.0
+faiss-cpu==1.13.2
+langchain-community==0.4.1
+
+# Loads API keys from .env
+python-dotenv>=1.0.0

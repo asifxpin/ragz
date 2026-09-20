@@ -1,0 +1,26 @@
+[project]
+name = "ragz"
+version = "0.1.0"
+description = "Bilingual (English/Arabic) voice agent: Pipecat pipeline + LangChain deep agent with FAISS retrieval"
+readme = "README.md"
+authors = [
+    { name = "Asif Shah", email = "asif.shah@xpin.ae" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "camel-tools>=1.6.0",
+    "deepagents>=0.7.0",
+    "faiss-cpu==1.13.2",
+    "langchain>=1.0.0",
+    "langchain-community==0.4.1",
+    "langchain-openai>=1.0.0",
+    "langchain-text-splitters>=0.0.1",
+    "langgraph>=1.0.0",
+    "pipecat-ai[elevenlabs,runner,silero,webrtc]>=1.10.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.uv]
+# Flat script layout (main.py, rags.py, deep_agent.py at the root),
+# so there is nothing to build/install as a package.
+package = false
